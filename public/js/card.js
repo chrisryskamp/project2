@@ -1,6 +1,6 @@
 $( () => {
-  $("#submit").on("click", () => {
-
+  $("#submit").on("click", (event) => {
+    
     $.ajax("/api/cards", {
       type: "POST",
       data: {
@@ -9,7 +9,7 @@ $( () => {
         answer: $("#answer").val().trim()
       }
     })
-
+    console.log(data)
   })
 })
 
