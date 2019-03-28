@@ -1,3 +1,11 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  width: 100%;
+}
+
+html {
+  width: 100%;
+}
