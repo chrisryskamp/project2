@@ -1,24 +1,19 @@
+
+
+// Requiring our Todo model
 var db = require("../models");
 
+// Routes
+// =============================================================
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
-  });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
+  // GET route for getting all of the posts
+  app.get("/api/triva/", function(req, res) {
+    db.Trivia.findAll({})
+      .then(function(dbTrivia) {
+        res.json(dbTrivia);
+      });
   });
+}; 
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-};
+ 
