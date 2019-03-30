@@ -16,6 +16,8 @@ $( () => {
     console.log("wow")
     $(".displayAnswer").show();
   })
+
+
 })
 
 $(document).ready(function () {
