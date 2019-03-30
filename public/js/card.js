@@ -14,7 +14,7 @@ $( () => {
 
   $("#revealAnswer").on("click", () => {
     console.log("wow")
-    $(".displayanswer").style.display = "none"
+    $(".displayAnswer").show();
   })
 })
 
