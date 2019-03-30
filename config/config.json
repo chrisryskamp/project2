@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "N@ey1234",
+    "database": "flashcards_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "N@ey1234",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
