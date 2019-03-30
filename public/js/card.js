@@ -11,6 +11,11 @@ $( () => {
     })
     console.log(data)
   })
+
+  $("#revealAnswer").on("click", () => {
+    console.log("wow")
+    $(".displayanswer").style.display = "none"
+  })
 })
 
 $(document).ready(function () {
@@ -18,6 +23,8 @@ $(document).ready(function () {
     $(".navbar-collapse").collapse('hide');
   });
 });
+
+
 
 
 

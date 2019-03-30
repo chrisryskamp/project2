@@ -11,14 +11,14 @@ module.exports = function(app) {
     });
   });
 
-  // Load Cards page and pass in an Cards by id
-  app.get("/Cards/:id", function(req, res) {
-    db.Cards.findOne({ where: { id: req.params.id } }).then(function(dbCards) {
-      res.render("Cards", {
-        Cards: dbCards
-      });
-    });
-  });
+  // // Load Cards page and pass in an Cards by id
+  // app.get("/Cards/:id", function(req, res) {
+  //   db.Cards.findOne({ where: { id: req.params.id } }).then(function(dbCards) {
+  //     res.render("Cards", {
+  //       Cards: dbCards
+  //     });
+  //   });
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

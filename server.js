@@ -24,8 +24,6 @@ app.set("view engine", "pug");
 require('./routes/apiRoutes')(app);
 require('./routes/htmlRoutes')(app);
 
-require('./routes/apiRoutes')(app);
-require('./routes/htmlRoutes')(app); 
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
