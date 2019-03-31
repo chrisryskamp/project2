@@ -1,5 +1,5 @@
 {
-  "name": "handlebars-boilerplate",
+  "name": "Flashcard App",
   "version": "1.0.0",
   "description": "Project 2 Starter",
   "main": "server.js",
@@ -11,9 +11,9 @@
   },
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "dotenv": "^6.2.0",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
+    "express": "^4.16.4",
     "mysql2": "^1.6.5",
     "pug": "^2.0.3",
     "sequelize": "^5.2.6"
@@ -26,7 +26,8 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
-    "prettier": "^1.13.7"
+    "prettier": "^1.13.7",
+    "sequelize": "^5.2.6"
   },
   "directories": {
     "test": "test"

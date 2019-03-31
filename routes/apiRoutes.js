@@ -1,7 +1,6 @@
-
-
 // Requiring our Todo model
 var db = require("../models");
+var axios = require('axios');
 
 // Routes
 // =============================================================
@@ -16,67 +15,45 @@ var db = require("../models");
 //   });
 // }; 
 
- 
-module.exports = function(app) {
+module.exports = function (app) {
   // Get all Cards
-  // app.get("/api/cards", function(req, res) {
-  //   db.Cards.findAll({}).then(function(dbCards) {
-  //     res.json(dbCards);
-  //   });
-  // });
-
-  app.get("/api/cards", function(req, res) {
-    var cardList = [];
-    db.Cards.findAll({}).then(function(data) {
+  app.get("/api/cards", function (req, res) {
+    // var cardList = [];
+    db.Cards.findAll({}).then(function (data) {
       var i = Math.floor(Math.random() * data.length)
       console.log(i)
-
       cardData = data[i];
-      
-    //   for (var i = 0; i < data.length; i++) {
-
-    //     // Create an object to save current row's data
-    //     var cardData = {
-    //       'question':data[i].question,
-    //       'hint':data[i].hint,
-    //       'answer':data[i].answer
-    //     }
-    //     // Add object into array
-    //     cardList.push(cardData);
-    // }
-    // console.log(cardList);
-    // Render index.pug page using array 
-    res.render("cards", {cardData});
-      // var cardsObj = {
-      //   Cards: data
-      // };
-      // var cardsObj1 = [
-      //   {
-      //   cardText: "ttttt",
-      // },
-      // {
-      //   cardText: "ttttt",
-      // }];
-      // console.log(cardsObj.Cards[0].dataValues);
-      // res.render("cards", {"cardsObj":cardsObj1});
-      // console.log(data.dataValues);
-      // res.render("cards", data.dataValues);
+      res.render("cards", { cardData });
     });
   });
 
-  
+  // Get Trivia Questions
+  app.get("/api/trivia", function (req, res) {
+    axios.get("https://opentdb.com/api.php?amount=1").then(response => {
+      var question = response.data.results[0].question;
+      console.log(question);
+      res.render("trivia", {question})
+    });
+  });
+  // app.get("/api/trivia/:num", function(req, res) {
+  //   // var cardList = [];
+  //     var i = Math.floor(Math.random() * data.length)
+  //     console.log(i)
+  //     cardData = res.data[i];
+  //   res.render("trivia", {cardData});
+  // });
 
   // Create a new Cards
-  app.post("/api/cards", function(req, res) {
-    db.Cards.create(req.body).then(function(dbCards) {
+  app.post("/api/cards", function (req, res) {
+    db.Cards.create(req.body).then(function () {
       res.redirect("/");
     });
   });
 
-  // Delete an Cards by id
-  app.delete("/api/cards/:id", function(req, res) {
-    db.Cards.destroy({ where: { id: req.params.id } }).then(function(dbCards) {
-      res.json(dbCards);
-    });
-  });
+  //   // Delete an Cards by id
+  //   app.delete("/api/cards/:id", function(req, res) {
+  //     db.Cards.destroy({ where: { id: req.params.id } }).then(function(dbCards) {
+  //       res.json(dbCards);
+  //     });
+  //   });
 };

@@ -1,6 +1,7 @@
-$( () => {
+$(document).ready(function () {
+
   $("#submit").on("click", (event) => {
-    
+
     $.ajax("/api/cards", {
       type: "POST",
       data: {
@@ -12,19 +13,40 @@ $( () => {
     console.log(data)
   })
 
+
+  $("#submitTrivia").on("click", function () {
+    $(location).attr('href', '/api/trivia')
+  });
+  // => {
+  // event.preventDefault();
+  // var amount = $("#questionAmount").val().trim();
+  // var url = `https://opentdb.com/api.php?amount=${amount}`
+  // var url = `https://opentdb.com/api.php?amount=1`
+  // $.ajax({
+  //   url: url,
+  //   method: "GET"
+  // }).then(function(data){
+  //   randomQuestion = data.results[0].question;
+  //   // console.log(randomQuestion);
+  // }).then(function(){
+  //   $(location).attr('href', '/api/trivia')
+  // })
+  // })
+
+
+
   $("#revealAnswer").on("click", () => {
     console.log("wow")
     $(".displayAnswer").show();
   })
 
 
-})
-
-$(document).ready(function () {
-  $(".navbar-nav li a").click(function(event) {
+  $(".navbar-nav li a").click(function (event) {
     $(".navbar-collapse").collapse('hide');
   });
 });
+
+
 
 
 
