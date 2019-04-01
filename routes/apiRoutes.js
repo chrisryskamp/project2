@@ -31,8 +31,9 @@ module.exports = function (app) {
   app.get("/api/trivia", function (req, res) {
     axios.get("https://opentdb.com/api.php?amount=1").then(response => {
       var question = response.data.results[0].question;
+      var answer = response.data.results[0].correct_answer
       console.log(question);
-      res.render("trivia", {question})
+      res.render("trivia", {question, answer})
     });
   });
   // app.get("/api/trivia/:num", function(req, res) {
