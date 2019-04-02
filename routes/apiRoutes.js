@@ -21,7 +21,7 @@ module.exports = function (app) {
   app.get("/api/cards", function (req, res) {
     // var cardList = [];
     db.Cards.findAll({}).then(function (data) {
-      if (data == null) {
+      if (data) {
         var i = Math.floor(Math.random() * data.length)
         console.log(i)
         cardData = data[i];
