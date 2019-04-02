@@ -21,10 +21,14 @@ module.exports = function (app) {
   app.get("/api/cards", function (req, res) {
     // var cardList = [];
     db.Cards.findAll({}).then(function (data) {
-      var i = Math.floor(Math.random() * data.length)
-      console.log(i)
-      cardData = data[i];
-      res.render("cards", { cardData });
+      if (data == null) {
+        var i = Math.floor(Math.random() * data.length)
+        console.log(i)
+        cardData = data[i];
+        res.render("cards", { cardData });
+      } else {
+        res.redirect("/error")
+      }
     });
   });
 
