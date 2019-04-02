@@ -1,0 +1,13 @@
+form(action="/api/cards" method="POST" class="d-flex justify-content-center flex-column")
+    label(for="cardInput") Add a card!
+    br
+    p Question
+    input(id="question" type="text" name="question")
+    br
+    p Hint
+    input(id="hint" type="text" name="hint")
+    br
+    p Answer
+    input(id="answer" type="text" name="answer")
+    br
+    button(id="submit" type="submit") Submit

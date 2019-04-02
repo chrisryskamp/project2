@@ -12,5 +12,9 @@
 
 * The app will be deployed on Heroku using a Node and Express Web Server
 
+<<<<<<< HEAD
+* This app will follow the MVC paradigm.
+=======
 * This app will follow the MVC paradigm.
 
+>>>>>>> Matt
