@@ -12,9 +12,6 @@
 
 * The app will be deployed on Heroku using a Node and Express Web Server
 
-<<<<<<< HEAD
-* This app will follow the MVC paradigm.
-=======
 * This app will follow the MVC paradigm.
 
->>>>>>> Matt
+&& npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit

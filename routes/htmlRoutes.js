@@ -6,9 +6,9 @@ module.exports = function(app) {
       res.render("index");
   });
   // Load trivia form page
-  app.get("/api/trivia", function(req, res) {
-      res.render("triviaForm");
-  });
+  // app.get("/api/trivia", function(req, res) {
+  //     res.render("triviaForm");
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
