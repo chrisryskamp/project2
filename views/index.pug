@@ -3,5 +3,6 @@ block content
   div(class="container d-flex justify-content-center flex-column")
     include form.pug
     include includes/js.pug
-    button(id="submitTrivia" type="submit") Get Question
+    form(action="/api/cards" method="GET")
+      button(type="submit") Review Questions
 
