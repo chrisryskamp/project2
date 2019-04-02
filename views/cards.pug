@@ -1,0 +1,13 @@
+extends layout
+block content
+  include includes/js
+
+  ul
+    li= cardData.question
+    li= cardData.hint
+
+  button(id="revealAnswer") Click here for answer!
+  form(action="/api/cards")
+    button(id="nextQuestion") Next Question
+
+  p(class="displayAnswer")= cardData.answer
