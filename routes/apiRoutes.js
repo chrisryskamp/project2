@@ -1,6 +1,8 @@
 // Requiring our Todo model
 var db = require("../models");
 var axios = require('axios');
+const Entities = require('html-entities').AllHtmlEntities;
+const entities = new Entities();
 
 // Routes
 // =============================================================
@@ -30,8 +32,8 @@ module.exports = function (app) {
   // Get Trivia Questions
   app.get("/api/trivia", function (req, res) {
     axios.get("https://opentdb.com/api.php?amount=1").then(response => {
-      var question = response.data.results[0].question;
-      var answer = response.data.results[0].correct_answer
+      var question = entities.decode(response.data.results[0].question);
+      var answer = entities.decode(response.data.results[0].correct_answer);
       console.log(question);
       res.render("trivia", {question, answer})
     });
