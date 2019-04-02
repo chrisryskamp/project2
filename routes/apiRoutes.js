@@ -2,6 +2,7 @@
 var db = require("../models");
 var axios = require('axios');
 
+
 // Routes
 // =============================================================
 // module.exports = function(app) {
@@ -30,10 +31,15 @@ module.exports = function (app) {
   // Get Trivia Questions
   app.get("/api/trivia", function (req, res) {
     axios.get("https://opentdb.com/api.php?amount=1").then(response => {
-      var question = response.data.results[0].question;
+      var question = `${response.data.results[0].question}`;
+      var questionString = question.includes("&")
       var answer = response.data.results[0].correct_answer
-      console.log(question);
-      res.render("trivia", {question, answer})
+      console.log(questionString);
+      if (questionString) {
+        res.redirect("/api/trivia")
+      } else {
+        res.render("trivia", {question, answer})
+      }
     });
   });
   // app.get("/api/trivia/:num", function(req, res) {
