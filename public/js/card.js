@@ -17,6 +17,10 @@ $(document).ready(function () {
   $("#submitTrivia").on("click", function () {
     $(location).attr('href', '/api/trivia')
   });
+
+  $("#nextQuestion").on("click", () => {
+    $(location).attr('href', "/api/trivia")
+  })
   // => {
   // event.preventDefault();
   // var amount = $("#questionAmount").val().trim();
@@ -37,7 +41,7 @@ $(document).ready(function () {
 
   $("#revealAnswer").on("click", () => {
     console.log("wow")
-    $(".displayAnswer").show();
+    $(".revealAnswer").show();
   })
 
 
