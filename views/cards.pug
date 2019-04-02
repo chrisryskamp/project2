@@ -1,10 +1,13 @@
-ul
-  each Cards in cardList
-    li= Cards.question + Cards.hint + Cards.answer
+extends layout
+block content
+  include includes/js
 
-ul
-  each Cards in cardList
-    li= Cards.question
-    li= Cards.hint
-    li= Cards.answer
+  ul
+    li= cardData.question
+    li= cardData.hint
 
+  button(id="revealAnswer") Click here for answer!
+  form(action="/api/cards")
+    button(id="nextQuestion") Next Question
+
+  p(class="displayAnswer")= cardData.answer

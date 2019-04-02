@@ -1,23 +1,13 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Load index page
+  // Load home page
   app.get("/", function(req, res) {
-    db.Cards.findAll({}).then(function(dbCards) {
-      res.render("index", {
-        msg: "Welcome!",
-        Cards: dbCards
-      });
-    });
+      res.render("index");
   });
-
-  // Load Cards page and pass in an Cards by id
-  app.get("/Cards/:id", function(req, res) {
-    db.Cards.findOne({ where: { id: req.params.id } }).then(function(dbCards) {
-      res.render("Cards", {
-        Cards: dbCards
-      });
-    });
+  // Load trivia form page
+  app.get("/api/trivia", function(req, res) {
+      res.render("triviaForm");
   });
 
   // Render 404 page for any unmatched routes

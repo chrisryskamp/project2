@@ -1,5 +1,8 @@
 extends layout
 block content
-  include includes/question.pug
-  include form.pug
-  include includes/js.pug
+  div(class="container d-flex justify-content-center flex-column")
+    include form.pug
+    include includes/js.pug
+    form(action="/api/cards" method="GET")
+      button(type="submit") Review Questions
+

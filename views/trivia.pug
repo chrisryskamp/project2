@@ -1,0 +1,12 @@
+extends layout
+block content
+
+  div
+    //- li= cardData.question
+    p= question
+
+  button(id="revealAnswer") Click here for answer!
+  button(id="nextQuestion") Next Question
+
+  include includes/js
+  p(class="revealAnswer")= answer
