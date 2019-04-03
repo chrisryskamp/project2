@@ -8,7 +8,7 @@
   },
   "test": {
     "username": "root",
-    "password": "password",
+    "password": "N@ey1234",
     "database": "flashcards_db",
     "host": "localhost",
     "dialect": "mysql",

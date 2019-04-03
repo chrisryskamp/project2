@@ -1,12 +1,68 @@
-extends layout
-block content
+doctype html
+html(lang='en')
+  head
+    // Required meta tags
+    meta(charset='utf-8')
+    link(rel='icon', href='./public/images/favicon.jpg')
+    title quizify
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    // Bootstrap CSS
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    link(href='/styles/form.css', rel='stylesheet')
+  body
+    // nav bar element with a few classes, -clacis nav bar, navbar toggable, bg-info, inverserse to change color of links
+    nav.navbar.navbar-expand-lg.navbar-light.bg-ligh.navbar-inv
+      .container
+        button.navbar-toggler(data-toggle='collapse', data-target='#mainNav')
+          // burger lines for links
+          span.navbar-toggler-icon
+        // collapsible navbar
+        #mainNav.collapse.navbar-collapse
+          // links for the other pages
+          .navbar-nav
+            a.nav-item.nav-link.active(href='/') Home
+            a.nav-item.nav-link(href='/api/cards') Flashcards
+            a.nav-item.nav-link(href='/api/trivia') Trivia
+    .jumbotron-fluid.bg-warning.text-white.text-center(style='background: rgb(170, 170, 170);')
+      .container
+         
+        p.lead Try you luck with Trivia!
+    // cards container that will hold 4 elements and 6 columns of with//
+    p
 
-  div
-    //- li= cardData.question
-    p= question
-
-  button(id="revealAnswer") Click here for answer!
-  button(id="nextQuestion") Next Question
-
+    main.inner.cover(role='main')
+  form.d-flex.justify-content-center.flex-column(action='/api/cards', method='POST')
+  .card.text-center
+    label(for='cardInput')
+    //li= cardData.question
+    P Question:
+    ul= question
+  #centerTriviaButtons.card-body
+      button(id="revealAnswer") Click here for answer!
+       button(id="nextQuestion") Next Question
+.card.text-center
   include includes/js
+  p Answer:
   p(class="revealAnswer")= answer
+
+    
+   
+    p
+    .jumbotron-fluid.medium-warning.text-white.text-center(style='background: rgba(9, 172, 248, 0.788);')
+      .container
+        h1.display- 
+        p.lead Try Again!
+        footer.mastfoot.mt-auto
+        .inner
+          p
+        .inner
+          p
+          
+            a(href='https://flashcardsproject.herokuapp.com/') quizify@heroku
+            |.
+      // jQuery first, then Popper.js, then Bootstrap JS
+      script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+      script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
+
+      

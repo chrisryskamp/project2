@@ -12,7 +12,7 @@ $(document).ready(function () {
         answer: $("#answer").val().trim()
       }
     })
-    console.log(data)
+    $(location).attr('href', '/api/form')
   })
 
 
