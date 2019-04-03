@@ -8,6 +8,11 @@
 /*
  * Base structure
  */
+ button {
+  background: rgba(9, 172, 248, 0.788);
+  border-radius: 15px;
+}
+
 .revealAnswer {
   display: none;
 }
