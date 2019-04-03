@@ -3,6 +3,10 @@ var db = require("../models");
 module.exports = function(app) {
   // Load home page
   app.get("/", function(req, res) {
+      res.render("landing");
+  });
+  // Load question form
+  app.get("/api/add_question", function(req, res) {
       res.render("index");
   });
   // Load trivia form page

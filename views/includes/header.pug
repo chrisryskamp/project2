@@ -1,14 +1,21 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  a.navbar-brand(href='#') Navbar
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li.nav-item.active
-        a.nav-link(href='#')
-          | Home 
-          span.sr-only (current)
-      li.nav-item
-        a.nav-link(href='/api/trivia') Trivia
-        a.nav-link(href='/') Create Flashcards
-        a.nav-link(href='/api/cards') Review Flashcards
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='../../../../favicon.ico')
+    // Bootstrap core CSS
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    // Custom styles for this template
+    link(href='/styles/styles.css', rel='stylesheet')
+  body.text-center
+    .cover-container.d-flex.h-100.p-3.mx-auto.flex-column
+      header.masthead.mb-auto
+        .inner
+          h3#logo.masthead-brand Quizify
+          nav.nav.nav-masthead.justify-content-center
+            a.nav-link.active(href='/') Home
+            a.nav-link(href='/api/trivia') Trivia
+            a.nav-link(href='/api/add_question') Create 
