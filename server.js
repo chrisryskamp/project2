@@ -1,14 +1,13 @@
 var express = require("express");
-<<<<<<< HEAD
-var db = require("./models")
-=======
-// const pug = require("pug")
+var db = require("./models"); 
+// const pug = require("pug"); 
 
 var db = require('./models');
->>>>>>> 7d057e14b0be1427586ae959cf7c6f6eb5f4f4e2
+
+
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 19563;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -22,6 +21,8 @@ app.use(express.static('public'));
 //     main: "main"
 //   })
 // );
+
+app.engine('pug', require('pug').__express); 
 app.set("view engine", "pug");
 
 // Routes
@@ -35,13 +36,6 @@ if (process.env.NODE_ENV === 'test') {
     syncOptions.force = true;
 }
 
-<<<<<<< HEAD
-// db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
-// });
-=======
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
@@ -52,4 +46,4 @@ db.sequelize.sync().then(function() {
         );
     });
 });
->>>>>>> 7d057e14b0be1427586ae959cf7c6f6eb5f4f4e2
+

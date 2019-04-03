@@ -1,7 +1,10 @@
 $(document).ready(function () {
 
-  $("#submit").on("click", (event) => {
 
+
+  $("#submit").on("click", (event) => {
+    alert("Running Twice");
+    event.preventDefault();
     $.ajax("/api/cards", {
       type: "POST",
       data: {
@@ -9,46 +12,60 @@ $(document).ready(function () {
         hint: $("#hint").val().trim(),
         answer: $("#answer").val().trim()
       }
+    }).then(
+      function clearFields() {
+
+        $("#question").reset();
+        $("#hint").reset();
+        $("#answer").reset();
+        console.log("clear!");
+
+        clearFields();
+
+      });
+
+
+
+
+
+    $("#submitTrivia").on("click", function () {
+      $(location).attr('href', '/api/trivia')
+    });
+
+    $("#nextQuestion").on("click", () => {
+      $(location).attr('href', "/api/trivia")
     })
-    console.log(data)
-  })
+    // => {
+    // event.preventDefault();
+    // var amount = $("#questionAmount").val().trim();
+    // var url = `https://opentdb.com/api.php?amount=${amount}`
+    // var url = `https://opentdb.com/api.php?amount=1`
+    // $.ajax({
+    //   url: url,
+    //   method: "GET"
+    // }).then(function(data){
+    //   randomQuestion = data.results[0].question;
+    //   // console.log(randomQuestion);
+    // }).then(function(){
+    //   $(location).attr('href', '/api/trivia')
+    // })
+    // })
 
 
-  $("#submitTrivia").on("click", function () {
-    $(location).attr('href', '/api/trivia')
+
+
+    $("#revealAnswer").on("click", () => {
+      console.log("wow"); 
+      $(".revealAnswer").show();
+    })
+  
+    
+
+
+    $(".navbar-nav li a").click(function (event) {
+      $(".navbar-collapse").collapse('hide');
+    });
   });
-
-  $("#nextQuestion").on("click", () => {
-    $(location).attr('href', "/api/trivia")
-  })
-  // => {
-  // event.preventDefault();
-  // var amount = $("#questionAmount").val().trim();
-  // var url = `https://opentdb.com/api.php?amount=${amount}`
-  // var url = `https://opentdb.com/api.php?amount=1`
-  // $.ajax({
-  //   url: url,
-  //   method: "GET"
-  // }).then(function(data){
-  //   randomQuestion = data.results[0].question;
-  //   // console.log(randomQuestion);
-  // }).then(function(){
-  //   $(location).attr('href', '/api/trivia')
-  // })
-  // })
-
-
-
-  $("#revealAnswer").on("click", () => {
-    console.log("wow")
-    $(".revealAnswer").show();
-  })
-
-
-  $(".navbar-nav li a").click(function (event) {
-    $(".navbar-collapse").collapse('hide');
-  });
-});
 
 
 

@@ -1,14 +1,11 @@
-<<<<<<< HEAD
-
 
 // Requiring our Trivia model
 var db = require("../models/index");
 
-=======
+
 // Requiring our Todo model
 var db = require("../models");
 var axios = require('axios');
->>>>>>> 7d057e14b0be1427586ae959cf7c6f6eb5f4f4e2
 
 // Routes
 // =============================================================
@@ -52,37 +49,9 @@ module.exports = function (app) {
   //   res.render("trivia", {cardData});
   // });
 
-<<<<<<< HEAD
-  app.get("/api/trivia/", function(req, res) {
-    db.trivia.findAll({})
-      .then(function(dbTrivia) {
-        res.json(dbTrivia);
-      });
-  });
-
-  app.get("/api/flashcards/", function(req, res) {
-    db.flashcards.findAll({})
-      .then(function(dbFlashcards) {
-        res.json(dbFlashcards);
-      });
-  });
-
-  app.post("/api/posts/" , function(req, res) {
-    console.log(req.body);
-    db.trivia.create({
-      category: req.body.category,
-      question: req.body.question,
-      answer: req.body.answer,
-      external_id: req.body.external_id
-    })
-      .then(function(dbTrivia) {
-        res.json(dbTrivia);
-      });
-  });
-}; 
-=======
   // Create a new Cards
   app.post("/api/cards", function (req, res) {
+    console.log(req.body);
     db.Cards.create(req.body).then(function () {
       res.redirect("/");
     });
@@ -95,4 +64,3 @@ module.exports = function (app) {
   //     });
   //   });
 };
->>>>>>> 7d057e14b0be1427586ae959cf7c6f6eb5f4f4e2

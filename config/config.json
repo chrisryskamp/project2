@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "12323Moose",
     "database": "flashcards_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "password",
+    "password": "12323Moose",
     "database": "flashcards_db",
     "host": "localhost",
     "dialect": "mysql",
