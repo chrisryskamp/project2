@@ -1,4 +1,4 @@
-  /* CSS FOR LANDING PAGE */
+/* CSS FOR LANDING PAGE */
   /*
  * Globals
  */
@@ -17,7 +17,7 @@ a:hover {
   color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #fff;
-  border: .05rem solid #fff;
+  border: .05rem solid rgb(255, 255, 255);
 }
 
 
@@ -28,7 +28,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: skyblue;
+  background-color: rgb(0, 204, 255);
 }
 
 body {
@@ -91,11 +91,12 @@ body {
  * Cover
  */
 .cover {
-  padding: 0 1.5rem;
+  padding: 0 2.0rem;
 }
 .cover .btn-lg {
-  padding: .75rem 1.25rem;
+  padding: .75rem 1.25rem .5rem .5rem;
   font-weight: 700;
+  margin: 5px;
 }
 
 

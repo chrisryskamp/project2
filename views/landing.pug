@@ -5,7 +5,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
     meta(name='description', content='')
     meta(name='author', content='')
-    link(rel='icon', href='../../../../favicon.ico')
+    link(rel='icon', href='./images/favicon.jpg')
     title Cover Template for Bootstrap
     link(rel='canonical', href='https://getbootstrap.com/docs/4.0/examples/cover/')
     // Bootstrap core CSS
@@ -16,24 +16,24 @@ html(lang='en')
     .cover-container.d-flex.h-100.p-3.mx-auto.flex-column
       header.masthead.mb-auto
         .inner
-          h3.masthead-brand Cover
+          h3.masthead-brand quizify
           nav.nav.nav-masthead.justify-content-center
-            a.nav-link.active(href='#') Home
-            a.nav-link(href='#') Features
-            a.nav-link(href='#') Contact
+            // <a class="nav-link active" href="#">Home</a>
+            a.nav-link.active(href='/api/form') Flashcards
+            a.nav-link.active(href='/api/trivia') Trivia
       main.inner.cover(role='main')
-        h1.cover-heading Cover your page.
+        h1.cover-heading Making Learning Great Again
         p.lead
-          | Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
+          | We supply you with the platform needed to make learning fun. Choose between making personalized flash cards for any situation and/or test you knowledge on random trivia. Whichever you choose, we promise it'll be fun.
         p.lead
-          a.btn.btn-lg.btn-secondary(href='#') Learn more
+          a.btn.btn-lg.btn-secondary(href='/api/form') Create Flashcards
+          a.btn.btn-lg.btn-secondary(href='/api/trivia') Test Your Knowledge
       footer.mastfoot.mt-auto
         .inner
           p
-            | Cover template for 
-            a(href='https://getbootstrap.com/') Bootstrap
-            | , by 
-            a(href='https://twitter.com/mdo') @mdo
+        .inner
+          p
+            a(href='https://flashcardsproject.herokuapp.com/') quizify@heroku
             | .
     //
       Bootstrap core JavaScript
