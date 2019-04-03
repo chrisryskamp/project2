@@ -57,7 +57,7 @@ module.exports = function (app) {
   // Create a new Cards
   app.post("/api/cards", function (req, res) {
     db.Cards.create(req.body).then(function () {
-      res.redirect("/");
+      res.redirect("/api/form");
     });
   });
 

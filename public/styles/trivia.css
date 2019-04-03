@@ -9,6 +9,10 @@
  * Base structure
  */
 
+.revealAnswer {
+  display: none;
+}
+
  html,
  body {
    height: 100%;

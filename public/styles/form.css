@@ -8,6 +8,9 @@
 /*
  * Base structure
  */
+.revealAnswer {
+  display: none;
+}
 
 html,
 body {
