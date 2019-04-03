@@ -5,4 +5,6 @@ html {
   .revealAnswer {
     display: none;
   }
-
+  input[type=submit] {
+    border-radius: 10px;
+  }
