@@ -6,8 +6,9 @@ block content
     li= cardData.question
     li= cardData.hint
 
+  button(id="hideAnser") Click here to hide answer!
   button(id="revealAnswer") Click here for answer!
   form(action="/api/cards")
     button(id="nextQuestion") Next Question
 
-  //- p(id="answerP" class="displayAnswer")= cardData.answer
+  p(id="answerP" class="displayAnswer")= cardData.answer

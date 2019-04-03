@@ -34,7 +34,20 @@ $(document).ready(function () {
 
     $("#nextQuestion").on("click", () => {
       $(location).attr('href', "/api/trivia")
-    })
+    }); 
+
+    $("#hideAnswer").on("click", function(){
+      console.log("hide"); 
+      $("#answerP").css('visiblity', 'hidden');
+    }); 
+
+    $("#revealAnswer").on("click", function(){
+      console.log("wow"); 
+      $("#answerP").css('visibility', 'visible');
+    }); 
+  
+
+
     // => {
     // event.preventDefault();
     // var amount = $("#questionAmount").val().trim();
@@ -52,13 +65,6 @@ $(document).ready(function () {
     // })
 
 
-
-
-    $("#revealAnswer").on("click", () => {
-      console.log("wow"); 
-      $(".revealAnswer").show();
-    })
-  
     
 
 
